@@ -15,7 +15,7 @@ def upload():
             file_name = upload_my_file(f)
             print(file_name)
        
-        return render_template('uploads3.html')
+        return render_template('uploads3.html',myhost=socket.gethostname())
 
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=8080,debug=True)
