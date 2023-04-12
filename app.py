@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request
 from upload import *
+import socket
 
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return "Hello Everyone"
+    return "Hello Everyone, this app is served from {}".format(socket.gethostname())
 
 @app.route("/upload", methods=['POST', 'GET'])
 def upload():
