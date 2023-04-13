@@ -5,7 +5,7 @@ import socket
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return "Hello Everyone, this app is served from {}".format(socket.gethostname())
+    return "Hello Everyone, this application is served from {}".format(socket.gethostname())
 
 @app.route("/upload", methods=['POST', 'GET'])
 def upload():
