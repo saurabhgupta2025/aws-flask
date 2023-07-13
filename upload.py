@@ -1,7 +1,7 @@
 from werkzeug.utils import secure_filename
 import boto3
 
-bucket_name = 'iampsbucket'
+bucket_name = 'pranjalrandombucket'
 
 
 def upload_my_file(f):
