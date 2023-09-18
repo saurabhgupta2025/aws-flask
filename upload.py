@@ -1,7 +1,7 @@
 from werkzeug.utils import secure_filename
 import boto3
 
-bucket_name = 'pranjalrandombucket'
+bucket_name = 'my-tf-test-bucket-pranjal'
 
 
 def upload_my_file(f):
