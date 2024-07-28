@@ -7,5 +7,6 @@ sudo apt install git
 git clone https://github.com/iampsrv/aws-flask.git
 cd aws-flask
 sudo apt-get -y install python3-pip
-pip install -r req.txt
+pip install flask --break-system-packages
+pip install boto3 --break-system-packages
 python3 app.py
