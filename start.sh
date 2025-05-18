@@ -1,12 +1,28 @@
-#!/bin/bash
-sudo apt update -y
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt install python3
-sudo apt install git
+#!/bin/bash -ex
+
+# Update system
+apt update -y
+apt upgrade -y
+
+# Install dependencies
+apt install -y python3 python3-pip python3-venv git
+
+# Move to home directory
+cd /home/ubuntu
+
+# Clone the repo
 git clone https://github.com/iampsrv/aws-flask.git
 cd aws-flask
-sudo apt-get -y install python3-pip
-pip install flask --break-system-packages
-pip install boto3 --break-system-packages
-python3 app.py
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Upgrade pip and install required packages
+pip install --upgrade pip
+pip install flask boto3
+
+# Run the Flask app in background and log output
+nohup venv/bin/python3 app.py > app.log 2>&1 &
